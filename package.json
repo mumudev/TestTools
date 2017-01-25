@@ -1,0 +1,54 @@
+{
+  "name": "nemv",
+  "version": "0.0.1",
+  "description": "一个开源的全栈框架，架构采取nodejs+express+mongoose+Vue，简称nemv。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mumudev/nemv.git"
+  },
+  "keywords": [
+    "Full-stack",
+    "nodejs",
+    "express",
+    "mongodb",
+    "vue"
+  ],
+  "author": "Mumudeveloper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mumudev/nemv/issues"
+  },
+  "homepage": "https://github.com/mumudev/nemv#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-runtime": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "director": "^1.2.8",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^4.3.0",
+    "sass-loader": "^4.1.1",
+    "serve-favicon": "^2.3.2",
+    "style-loader": "^0.13.1",
+    "vue": "^2.1.10",
+    "vue-loader": "^10.0.2",
+    "vue-style-loader": "^1.0.0",
+    "vue-template-compiler": "^2.1.10",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "express-session": "^1.15.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.7.8"
+  }
+}

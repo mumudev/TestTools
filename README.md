@@ -7,7 +7,9 @@
 ## Depandence
 
   Nodejs>=4
+
   Mongodb
+  
   Python2.7(for node-sass)
 
 ## Quick Start

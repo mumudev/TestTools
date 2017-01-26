@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 
 function _send(type,options){
+    options.url = '/v1/api/' + options.url;
     let defaultGetOption = {
         type: type,
         cache: false,

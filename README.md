@@ -29,3 +29,7 @@ $ gulp build #For production build.
 ```bash
 $ gulp watchVue #Watch app folder and when files is edited will webpack again.
 ```
+
+## License
+
+  [MIT](LICENSE)

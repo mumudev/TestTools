@@ -2,10 +2,11 @@
 var express = require('express');
 var Model = require('../models/User');
 var router = express.Router();
+
 router.route('/:id?')
-    .get(function(req, res) {
-        var username = req.query.username;
-        var password = req.query.password;
+    .post(function(req, res) {
+        var username = req.body.username;
+        var password = req.body.password;
         var callback = function(err, obj) {
             if (err) {
                 return res.msg(0, 'Something error!');

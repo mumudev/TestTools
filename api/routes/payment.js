@@ -1,15 +1,7 @@
 var express = require('express');
 var Model = require('../models/User');
 var router = express.Router();
-router.use('/', function(req, res, next) {
-    // if (!req.session.user) {
-    //     return res.json({
-    //         code: -1,
-    //         msg: 'You need to login!'
-    //     });
-    // }
-    next();
-});
+
 router.route('/:id?')
     .get(function(req, res) {
         var id = req.params.id;

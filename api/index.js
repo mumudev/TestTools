@@ -3,6 +3,12 @@ var express = require('express');
 var app = express();
 
 app.use('/', msgMw);
+app.use('/order', require('./validates/order'));
+app.use('/payment', require('./validates/payment'));
+app.use('/product', require('./validates/product'));
+app.use('/session', require('./validates/session'));
+app.use('/user', require('./validates/user'));
+
 app.use('/order', require('./routes/order'));
 app.use('/payment', require('./routes/payment'));
 app.use('/product', require('./routes/product'));

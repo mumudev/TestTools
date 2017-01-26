@@ -16,7 +16,7 @@
 
   The quickest way to get started Is shown below:
 
-  You can build below:
+  You can build as below:
 
 ```bash
 $ npm install -g gulp

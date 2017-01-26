@@ -1,7 +1,3 @@
-/**
- * Created by Mumudeveloper.
- *
- */
 /*jshint esversion: 6 */
 import Vue from 'vue';
 import Home from './pages/home.vue';

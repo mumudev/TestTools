@@ -13,6 +13,16 @@ A simple open source and full-stack framework which used nodejs+express+mongoose
 
   Install the executable. The executable's major version will match Express's:
 
+  You can build below:
+
 ```bash
-$ npm install -g express-generator@4
+$ npm install -g gulp
+$ npm install -g webpack
+$ npm install
+$ gulp build #For production build.
+```
+  When you are coding:
+    
+```bash
+$ gulp watchVue #Watch app folder and when files is edited will webpack again.
 ```

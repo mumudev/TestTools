@@ -9,14 +9,12 @@
   Nodejs>=4
 
   Mongodb
-  
+
   Python2.7(for node-sass)
 
 ## Quick Start
 
   The quickest way to get started Is shown below:
-
-  Install the executable. The executable's major version will match Express's:
 
   You can build below:
 

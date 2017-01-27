@@ -1,78 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-            mumudeveloper
-        </title>
-        <link rel="stylesheet" href="/semantic/semantic.min.css">
-    </head>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        mumudeveloper
+    </title>
+</head>
 
-    <body>
-        <div class="ui form segment panel">
-            <p>
-                mumudeveloper
-            </p>
-            <div class="two fields">
-                <div class="field">
-                    <label>用户名</label>
-                    <input placeholder="username" name="username" type="text">
-                </div>
-                <div class="field">
-                    <label>密码</label>
-                    <input placeholder="password" type="password" name="password">
-                </div>
-            </div>
-            <div class="ui primary submit button">登录</div>
-            <div class="ui error message"></div>
-        </div>
-    </body>
-    <!--Global Script-->
-    <script type="text/javascript" src="/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/semantic/semantic.min.js"></script>
-    <script type="text/javascript">
-        $('.ui.form').form({
-            fields: {
-                username: {
-                    identifier: 'username',
-                    rules: [{
-                        type: 'empty',
-                        prompt: 'Please enter a username'
-                    }]
-                },
-                password: {
-                    identifier: 'password',
-                    rules: [{
-                        type: 'empty',
-                        prompt: 'Please enter a password'
-                    }, {
-                        type: 'minLength[6]',
-                        prompt: 'Your password must be at least {ruleValue} characters'
-                    }]
-                }
-            }
-        });
-        $('.submit').on('click', function() {
-            $.ajax()
-        });
-        var resizeForm = function() {
-            var windowH = $(this).height();
-            var windowW = $(this).width();
-            $('.panel').css('top', windowH * 0.5 - 250 + 'px');
-            $('.panel').css('left', windowW * 0.5 - 250 + 'px');
-        };
-        resizeForm();
-        $(window).resize(resizeForm);
-    </script>
+<body>
+</body>
 
-    <style>
-        .panel {
-            width: 500px;
-            position: fixed;
-        }
-    </style>
+<style>
+    .panel {
+        width: 500px;
+        position: fixed;
+    }
+</style>
 
 </html>

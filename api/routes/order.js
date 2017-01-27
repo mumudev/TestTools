@@ -3,9 +3,9 @@ var Model = require('../models/User');
 var router = express.Router();
 
 router.route('/:id?')
-    .get(function(req, res) {
+    .get(function (req, res) {
         var id = req.params.id;
-        var callback = function(err, obj) {
+        var callback = function (err, obj) {
             if (err) {
                 return res.msg(0, 'Id is not available!');
             }
@@ -13,9 +13,9 @@ router.route('/:id?')
         };
         Model.findById(id).exec(callback);
     })
-    .post(function(req, res) {
+    .post(function (req, res) {
         var body = req.body;
-        var callback = function(err, obj) {
+        var callback = function (err, obj) {
             if (err) {
                 return res.msg(0, 'Something error! Please check your params');
             }
@@ -23,14 +23,14 @@ router.route('/:id?')
         };
         Model.create(body, callback);
     })
-    .patch(function(req, res) {
+    .patch(function (req, res) {
         var id = req.params.id;
         var query = req.query;
         var body = { $set: req.body };
         var options = {
             new: true
         };
-        var callback = function(err, obj) {
+        var callback = function (err, obj) {
             if (err) {
                 return res.msg(0, 'Something error! Please check your params');
             }
@@ -42,10 +42,10 @@ router.route('/:id?')
             Model.update(query, body, options, callback);
         }
     })
-    .delete(function(req, res) {
+    .delete(function (req, res) {
         var id = req.params.id;
         var query = req.query;
-        var callback = function(err, obj) {
+        var callback = function (err, obj) {
             if (err) {
                 return res.msg(0, 'Something error! Please check your params');
             }

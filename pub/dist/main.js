@@ -3,27 +3,27 @@ webpackJsonp([0,2],[
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	var _vue = __webpack_require__(1);
-
+	
 	var _vue2 = _interopRequireDefault(_vue);
-
+	
 	var _home = __webpack_require__(3);
-
+	
 	var _home2 = _interopRequireDefault(_home);
-
-	var _order2 = __webpack_require__(9);
-
+	
+	var _order2 = __webpack_require__(10);
+	
 	var _order3 = _interopRequireDefault(_order2);
-
-	var _notFound = __webpack_require__(19);
-
+	
+	var _notFound = __webpack_require__(20);
+	
 	var _notFound2 = _interopRequireDefault(_notFound);
-
-	var _director = __webpack_require__(22);
-
+	
+	var _director = __webpack_require__(23);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	var app = new _vue2.default({
 	    el: '#app',
 	    data: function data() {
@@ -41,8 +41,8 @@ webpackJsonp([0,2],[
 	        };
 	    }
 	}); /*jshint esversion: 6 */
-
-
+	
+	
 	var router = (0, _director.Router)({
 	    '/home': function home() {
 	        app.currentView = _home2.default;
@@ -79,29 +79,21 @@ webpackJsonp([0,2],[
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* script */
-	__vue_exports__ = __webpack_require__(4)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(8)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "D:\\workplaces\\nemv\\app\\pages\\home.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
+	var Component = __webpack_require__(4)(
+	  /* name */
+	  "home",
+	  /* script */
+	  __webpack_require__(5),
+	  /* template */
+	  __webpack_require__(9),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "D:\\workplaces\\nemv\\app\\pages\\home.vue"
+	if (Component.options.functional) {console.error("[vue-loader] home.vue: functional components are not supported with templates, they should use render functions.")}
+	
 	/* hot reload */
 	if (false) {(function () {
 	  var hotAPI = require("vue-hot-reload-api")
@@ -109,38 +101,102 @@ webpackJsonp([0,2],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-756b9697", __vue_options__)
+	    hotAPI.createRecord("data-v-756b9697", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-756b9697", __vue_options__)
+	    hotAPI.reload("data-v-756b9697", Component.options)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] home.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
+	
+	module.exports = Component.exports
 
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(process) {module.exports = function normalizeComponent (
+	  name,
+	  scriptExports,
+	  compiledTemplate,
+	  scopeId,
+	  cssModules
+	) {
+	  scriptExports = scriptExports || {}
+	
+	  // ES6 modules interop
+	  var type = typeof scriptExports.default
+	  if (type === 'object' || type === 'function') {
+	    // check named exports
+	    if (process.env.NODE_ENV !== 'production') {
+	      if (Object.keys(scriptExports).some(function (key) {
+	        return key !== 'default' && key !== '__esModule'
+	      })) {
+	        console.error('named exports are not supported in *.vue files.')
+	      }
+	    }
+	    scriptExports = scriptExports.default
+	  }
+	
+	  // Vue.extend constructor export interop
+	  var options = typeof scriptExports === 'function'
+	    ? scriptExports.options
+	    : scriptExports
+	
+	  // default name option based on filename
+	  if (options.name == null) {
+	    options.name = name
+	  }
+	
+	  // render functions
+	  if (compiledTemplate) {
+	    options.render = compiledTemplate.render
+	    options.staticRenderFns = compiledTemplate.staticRenderFns
+	  }
+	
+	  // scopedId
+	  if (scopeId) {
+	    options._scopeId = scopeId
+	  }
+	
+	  // inject cssModules
+	  if (cssModules) {
+	    var computed = options.computed || (options.computed = {})
+	    Object.keys(cssModules).forEach(function (key) {
+	      var module = cssModules[key]
+	      computed[key] = function () { return module }
+	    })
+	  }
+	
+	  return {
+	    exports: scriptExports,
+	    options: options
+	  }
+	}
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _subMenu = __webpack_require__(5);
-
+	
+	var _subMenu = __webpack_require__(6);
+	
 	var _subMenu2 = _interopRequireDefault(_subMenu);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	exports.default = {
 	  props: ['pages'],
 	  data: function data() {
 	    return {};
 	  },
-
+	
 	  components: {
 	    subMenu: _subMenu2.default
 	  }
@@ -152,32 +208,24 @@ webpackJsonp([0,2],[
 	//
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* script */
-	__vue_exports__ = __webpack_require__(6)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(7)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "D:\\workplaces\\nemv\\app\\widgets\\subMenu.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
+	var Component = __webpack_require__(4)(
+	  /* name */
+	  "subMenu",
+	  /* script */
+	  __webpack_require__(7),
+	  /* template */
+	  __webpack_require__(8),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "D:\\workplaces\\nemv\\app\\widgets\\subMenu.vue"
+	if (Component.options.functional) {console.error("[vue-loader] subMenu.vue: functional components are not supported with templates, they should use render functions.")}
+	
 	/* hot reload */
 	if (false) {(function () {
 	  var hotAPI = require("vue-hot-reload-api")
@@ -185,22 +233,21 @@ webpackJsonp([0,2],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-901c3ebc", __vue_options__)
+	    hotAPI.createRecord("data-v-901c3ebc", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-901c3ebc", __vue_options__)
+	    hotAPI.reload("data-v-901c3ebc", Component.options)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] subMenu.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
+	
+	module.exports = Component.exports
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	"use strict";
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
@@ -218,7 +265,7 @@ webpackJsonp([0,2],[
 	//
 	//
 	//
-
+	
 	exports.default = {
 	    props: {
 	        pages: {
@@ -230,7 +277,7 @@ webpackJsonp([0,2],[
 	};
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -275,7 +322,7 @@ webpackJsonp([0,2],[
 	}
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -296,32 +343,24 @@ webpackJsonp([0,2],[
 	}
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* script */
-	__vue_exports__ = __webpack_require__(10)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(18)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "D:\\workplaces\\nemv\\app\\pages\\order.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
+	var Component = __webpack_require__(4)(
+	  /* name */
+	  "order",
+	  /* script */
+	  __webpack_require__(11),
+	  /* template */
+	  __webpack_require__(19),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "D:\\workplaces\\nemv\\app\\pages\\order.vue"
+	if (Component.options.functional) {console.error("[vue-loader] order.vue: functional components are not supported with templates, they should use render functions.")}
+	
 	/* hot reload */
 	if (false) {(function () {
 	  var hotAPI = require("vue-hot-reload-api")
@@ -329,36 +368,35 @@ webpackJsonp([0,2],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-b5e17f74", __vue_options__)
+	    hotAPI.createRecord("data-v-b5e17f74", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-b5e17f74", __vue_options__)
+	    hotAPI.reload("data-v-b5e17f74", Component.options)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] order.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
+	
+	module.exports = Component.exports
 
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-
-	var _dataTable = __webpack_require__(11);
-
+	
+	var _dataTable = __webpack_require__(12);
+	
 	var _dataTable2 = _interopRequireDefault(_dataTable);
-
-	var _subMenu = __webpack_require__(5);
-
+	
+	var _subMenu = __webpack_require__(6);
+	
 	var _subMenu2 = _interopRequireDefault(_subMenu);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	//
 	//
 	//
@@ -366,7 +404,7 @@ webpackJsonp([0,2],[
 	//
 	//
 	//
-
+	
 	exports.default = {
 	    props: ['pages', 'dataTable'],
 	    beforeCreate: function beforeCreate() {},
@@ -389,7 +427,7 @@ webpackJsonp([0,2],[
 	            }]
 	        };
 	    },
-
+	
 	    components: {
 	        dataTable: _dataTable2.default,
 	        subMenu: _subMenu2.default
@@ -397,35 +435,28 @@ webpackJsonp([0,2],[
 	};
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
+	
 	/* styles */
-	__webpack_require__(12)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(16)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(17)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "D:\\workplaces\\nemv\\app\\widgets\\dataTable.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
+	__webpack_require__(13)
+	
+	var Component = __webpack_require__(4)(
+	  /* name */
+	  "dataTable",
+	  /* script */
+	  __webpack_require__(17),
+	  /* template */
+	  __webpack_require__(18),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "D:\\workplaces\\nemv\\app\\widgets\\dataTable.vue"
+	if (Component.options.functional) {console.error("[vue-loader] dataTable.vue: functional components are not supported with templates, they should use render functions.")}
+	
 	/* hot reload */
 	if (false) {(function () {
 	  var hotAPI = require("vue-hot-reload-api")
@@ -433,34 +464,33 @@ webpackJsonp([0,2],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4c298432", __vue_options__)
+	    hotAPI.createRecord("data-v-4c298432", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-4c298432", __vue_options__)
+	    hotAPI.reload("data-v-4c298432", Component.options)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] dataTable.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
+	
+	module.exports = Component.exports
 
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-
+	
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(14);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(15)(content, {});
+	var update = __webpack_require__(16)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4c298432!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dataTable.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4c298432!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dataTable.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4c298432!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dataTable.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4c298432!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dataTable.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -470,21 +500,21 @@ webpackJsonp([0,2],[
 	}
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(14)();
+	exports = module.exports = __webpack_require__(15)();
 	// imports
-
-
+	
+	
 	// module
-	exports.push([module.id, "\ntr.even{\n    background-color: #f9f9f9;\n}\n", ""]);
-
+	exports.push([module.id, "\ntr.even{\n    background-color: #f9f9f9;\n}\n", "", {"version":3,"sources":["/./app/widgets/dataTable.vue?16a99c02"],"names":[],"mappings":";AA6EA;IACA,0BAAA;CACA","file":"dataTable.vue","sourcesContent":["<template>\r\n    <div class=\"order\">\r\n        <table id='datatable' class=\"ui celled table\" cellspacing=\"0\" width=\"100%\">\r\n            <thead>\r\n                <tr>\r\n                    <th v-for=\"column in columnDefs\" :class='column.class'>{{column.name}}</th>\r\n                </tr>\r\n            </thead>\r\n        </table>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    export default {\r\n        data() {\r\n            return {}\r\n        },\r\n        props: ['url', 'columnDefs', 'buttons'],\r\n        watch: {\r\n            url: function () {\r\n                console.log(1);\r\n            }\r\n        },\r\n        ready() {\r\n            this.$watch('url', function (newVal, oldVal) {\r\n                console.log('newVal');//这里再感受下值拿到了没\r\n            });\r\n        },\r\n        mounted() {\r\n            this.datatable = $('#datatable').DataTable({\r\n                buttons: this.buttons,\r\n                columnDefs: this.columnDefs,\r\n                ajax: {\r\n                    url: this.url\r\n                },\r\n                jQueryUI: false,\r\n                \"aaSorting\": [\r\n                    [1, \"desc\"]\r\n                ],\r\n                language: {\r\n                    search: \"查找\",\r\n                    zeroRecords: \"没有匹配的数据\",\r\n                    infoEmpty: \"没有符合条件的记录\",\r\n                    info: \"第_PAGE_页/共 _PAGES_页\",\r\n                    lengthMenu: \"_MENU_ 条/页\",\r\n                    infoFiltered: \"(从 _MAX_条记录中过滤)\",\r\n                    paginate: {\r\n                        \"first\": \"首页 \",\r\n                        \"last\": \"末页\",\r\n                        \"next\": \"下一页\",\r\n                        \"previous\": \"上一页\"\r\n                    }\r\n                },\r\n                select: {\r\n                    style: 'os',\r\n                    className: 'active'\r\n                },\r\n                paging: true,\r\n                autoWidth: true,\r\n                bLengthChange: true, //改变每页显示数据数量\r\n                pageLength: 10,\r\n                processing: true, //是否显示加载中提示\r\n                responsive: true\r\n            });\r\n            var self = this;\r\n            $(\".btn-set-all\").on(\"click\", function (e) {\r\n                self.datatable.page.len(-1).draw();\r\n            });\r\n            this.$watch('url', function (newVal, oldVal) {\r\n                console.log('newVal');//这里再感受下值拿到了没\r\n            });\r\n        },\r\n        components: {\r\n        },\r\n    }\r\n</script>\r\n<style>\r\n    tr.even{\r\n        background-color: #f9f9f9;\r\n    }\r\n</style>"],"sourceRoot":"webpack://"}]);
+	
 	// exports
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/*
@@ -494,7 +524,7 @@ webpackJsonp([0,2],[
 	// css base code, injected by the css-loader
 	module.exports = function() {
 		var list = [];
-
+	
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
@@ -508,7 +538,7 @@ webpackJsonp([0,2],[
 			}
 			return result.join("");
 		};
-
+	
 		// import a list of modules into the list
 		list.i = function(modules, mediaQuery) {
 			if(typeof modules === "string")
@@ -540,7 +570,7 @@ webpackJsonp([0,2],[
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -564,23 +594,23 @@ webpackJsonp([0,2],[
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [];
-
+	
 	module.exports = function(list, options) {
 		if(false) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
-
+	
 		options = options || {};
 		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 		// tags it will allow on a page
 		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
+	
 		// By default, add <style> tags to the bottom of <head>.
 		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-
+	
 		var styles = listToStyles(list);
 		addStylesToDom(styles, options);
-
+	
 		return function update(newList) {
 			var mayRemove = [];
 			for(var i = 0; i < styles.length; i++) {
@@ -603,7 +633,7 @@ webpackJsonp([0,2],[
 			}
 		};
 	}
-
+	
 	function addStylesToDom(styles, options) {
 		for(var i = 0; i < styles.length; i++) {
 			var item = styles[i];
@@ -625,7 +655,7 @@ webpackJsonp([0,2],[
 			}
 		}
 	}
-
+	
 	function listToStyles(list) {
 		var styles = [];
 		var newStyles = {};
@@ -643,7 +673,7 @@ webpackJsonp([0,2],[
 		}
 		return styles;
 	}
-
+	
 	function insertStyleElement(options, styleElement) {
 		var head = getHeadElement();
 		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
@@ -662,7 +692,7 @@ webpackJsonp([0,2],[
 			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
 		}
 	}
-
+	
 	function removeStyleElement(styleElement) {
 		styleElement.parentNode.removeChild(styleElement);
 		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
@@ -670,17 +700,17 @@ webpackJsonp([0,2],[
 			styleElementsInsertedAtTop.splice(idx, 1);
 		}
 	}
-
+	
 	function createStyleElement(options) {
 		var styleElement = document.createElement("style");
 		styleElement.type = "text/css";
 		insertStyleElement(options, styleElement);
 		return styleElement;
 	}
-
+	
 	function addStyle(obj, options) {
 		var styleElement, update, remove;
-
+	
 		if (options.singleton) {
 			var styleIndex = singletonCounter++;
 			styleElement = singletonElement || (singletonElement = createStyleElement(options));
@@ -693,9 +723,9 @@ webpackJsonp([0,2],[
 				removeStyleElement(styleElement);
 			};
 		}
-
+	
 		update(obj);
-
+	
 		return function updateStyle(newObj) {
 			if(newObj) {
 				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
@@ -706,19 +736,19 @@ webpackJsonp([0,2],[
 			}
 		};
 	}
-
+	
 	var replaceText = (function () {
 		var textStore = [];
-
+	
 		return function (index, replacement) {
 			textStore[index] = replacement;
 			return textStore.filter(Boolean).join('\n');
 		};
 	})();
-
+	
 	function applyToSingletonTag(styleElement, index, remove, obj) {
 		var css = remove ? "" : obj.css;
-
+	
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = replaceText(index, css);
 		} else {
@@ -732,16 +762,16 @@ webpackJsonp([0,2],[
 			}
 		}
 	}
-
+	
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
 		var sourceMap = obj.sourceMap;
-
+	
 		if (media) {
 			styleElement.setAttribute("media", media);
 		}
-
+	
 		if (sourceMap) {
 			// https://developer.chrome.com/devtools/docs/javascript-debugging
 			// this makes source maps inside style tags work properly in Chrome
@@ -749,7 +779,7 @@ webpackJsonp([0,2],[
 			// http://stackoverflow.com/a/26603875
 			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 		}
-
+	
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = css;
 		} else {
@@ -762,11 +792,11 @@ webpackJsonp([0,2],[
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
@@ -782,12 +812,12 @@ webpackJsonp([0,2],[
 	//
 	//
 	//
-
+	
 	exports.default = {
 	    data: function data() {
 	        return {};
 	    },
-
+	
 	    props: ['url', 'columnDefs', 'buttons'],
 	    watch: {
 	        url: function url() {
@@ -841,12 +871,12 @@ webpackJsonp([0,2],[
 	            console.log('newVal'); //这里再感受下值拿到了没
 	        });
 	    },
-
+	
 	    components: {}
 	};
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -874,7 +904,7 @@ webpackJsonp([0,2],[
 	}
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -899,32 +929,24 @@ webpackJsonp([0,2],[
 	}
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* script */
-	__vue_exports__ = __webpack_require__(20)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(21)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "D:\\workplaces\\nemv\\app\\pages\\notFound.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
+	var Component = __webpack_require__(4)(
+	  /* name */
+	  "notFound",
+	  /* script */
+	  __webpack_require__(21),
+	  /* template */
+	  __webpack_require__(22),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "D:\\workplaces\\nemv\\app\\pages\\notFound.vue"
+	if (Component.options.functional) {console.error("[vue-loader] notFound.vue: functional components are not supported with templates, they should use render functions.")}
+	
 	/* hot reload */
 	if (false) {(function () {
 	  var hotAPI = require("vue-hot-reload-api")
@@ -932,32 +954,31 @@ webpackJsonp([0,2],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-193fd227", __vue_options__)
+	    hotAPI.createRecord("data-v-193fd227", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-193fd227", __vue_options__)
+	    hotAPI.reload("data-v-193fd227", Component.options)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] notFound.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
+	
+	module.exports = Component.exports
 
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-
-	var _subMenu = __webpack_require__(5);
-
+	
+	var _subMenu = __webpack_require__(6);
+	
 	var _subMenu2 = _interopRequireDefault(_subMenu);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	exports.default = {
 	    props: ['pages'],
 	    data: function data() {
@@ -965,7 +986,7 @@ webpackJsonp([0,2],[
 	            errMsg: '404! Page not found!'
 	        };
 	    },
-
+	
 	    components: {
 	        subMenu: _subMenu2.default
 	    }
@@ -978,7 +999,7 @@ webpackJsonp([0,2],[
 	//
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1000,3 +1021,4 @@ webpackJsonp([0,2],[
 
 /***/ }
 ]);
+//# sourceMappingURL=main.js.map

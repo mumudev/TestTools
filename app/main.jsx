@@ -4,20 +4,22 @@ import Home from './pages/home.vue';
 import order from './pages/order.vue';
 import NotFound from './pages/notFound.vue';
 import { Router } from 'director';
-
+import Vuex from 'vuex';
+Vue.use(Vuex);
 var app = new Vue({
     el: '#app',
+    template: '<component v-bind:is="currentView" :pages="pages"></component>',
     data: function () {
         return {
             currentView: Home,
             pages: [{
                 name: '主页',
                 icon: 'home',
-                url: '#/redirect/home',
+                url: '#/redirect/home'
             }, {
                 name: '订单管理',
                 icon: 'block layout',
-                url: '#/redirect/order',
+                url: '#/redirect/order'
             }]
         };
     }

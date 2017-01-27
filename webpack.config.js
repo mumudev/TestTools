@@ -15,15 +15,6 @@ module.exports = {
     // Loaders
     module: {
         loaders: [{
-            test: /\.css$/,
-            loaders: 'style!css'
-        }, {
-            test: /\.html$/,
-            loader: 'html',
-            query: {
-                minimize: true
-            }
-        }, {
             test: /\.jsx$/,
             loader: 'babel',
             query: {

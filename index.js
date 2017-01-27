@@ -2,6 +2,7 @@ var favicon = require('serve-favicon');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var express = require('express');
+var ejs = require('ejs');
 var path = require('path');
 var app = express();
 var conf = require('./conf');
@@ -16,14 +17,15 @@ app.use(session(conf.session));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.set('view engine', 'ejs');
+app.engine('html', ejs.__express);
+app.set('view engine', 'html');
 
 app.use('/' + conf.version + '/api', require('./api'));
 
-app.get('/login', function(req, res) {
+app.get('/login', function (req, res) {
     res.render('login');
 });
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     if (!req.session.user) {
         // return res.redirect('/login');
     }
@@ -31,12 +33,12 @@ app.get('/', function(req, res) {
 });
 
 // production error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     console.error(err.stack);
-    res.status(500).render('error', setting);
+    res.status(500).render('error');
 });
 
-app.listen(conf.port, function(err) {
+app.listen(conf.port, function (err) {
     if (err) {
         console.log('Create server fail!');
     } else {

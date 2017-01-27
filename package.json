@@ -42,11 +42,13 @@
     "vue-loader": "^10.0.2",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.10",
+    "vuex": "^2.1.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "body-parser": "^1.16.0",
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-session": "^1.15.0",
     "lodash": "^4.17.4",

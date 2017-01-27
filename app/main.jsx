@@ -4,6 +4,8 @@ import Home from './pages/home.vue';
 import order from './pages/order.vue';
 import NotFound from './pages/notFound.vue';
 import { Router } from 'director';
+import { Button, Select } from 'element-ui';
+Vue.use(Button);
 
 var app = new Vue({
     el: '#app',

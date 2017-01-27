@@ -22,12 +22,12 @@
 $ npm install -g gulp
 $ npm install -g webpack
 $ npm install
-$ gulp build #For production build.
+$ gulp #Watch app and api folder when its files changed.
 ```
-  When you are coding:
+  When you want to build in production:
     
 ```bash
-$ gulp watchVue #Watch app folder and when files is edited will webpack again.
+$ gulp build #For production build.
 ```
 
 ## License

@@ -5,7 +5,7 @@ module.exports = {
     // Entry Files
     entry: {
         main: './app/main.jsx',
-        vendor: ['vue', 'lodash', 'director']
+        vendor: ['vue', 'lodash', 'director', 'whatwg-fetch']
     },
     // Output Files
     output: {

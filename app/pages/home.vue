@@ -9,7 +9,8 @@
 
 <script>
     import subMenu from '../widgets/subMenu.vue'
-
+    import $http from '../methods/http'
+    $http.Get('/v1/api/user');
     export default {
         props: ['pages'],
         data() {

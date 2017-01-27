@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 const debug = process.env.NODE_ENV !== 'production'
 
-Vue.config.debug = debug
+Vue.config.debug = debug;
 
 export default new Vuex.Store({
     state,

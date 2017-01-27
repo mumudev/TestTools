@@ -4,8 +4,7 @@ import Home from './pages/home.vue';
 import order from './pages/order.vue';
 import NotFound from './pages/notFound.vue';
 import { Router } from 'director';
-import Vuex from 'vuex';
-Vue.use(Vuex);
+
 var app = new Vue({
     el: '#app',
     template: '<component v-bind:is="currentView" :pages="pages"></component>',

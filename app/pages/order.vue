@@ -1,12 +1,10 @@
 <template>
     <div>
         <subMenu :pages='pages'></subMenu>
-        <dataTable :url='url' :buttons='buttons' :columnDefs='columnDefs'></dataTable>
     </div>
 </template>
 
 <script>
-    import dataTable from '../widgets/dataTable.vue';
     import subMenu from '../widgets/subMenu.vue';
     export default {
         props: ['pages', 'dataTable'],

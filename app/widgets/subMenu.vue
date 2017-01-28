@@ -1,7 +1,7 @@
 <template>
     <div class="ui inverted menu">
         <div class="item">
-            <img src="/images/logo.png" class="logo">
+            <img src="/logo.png" class="logo">
         </div>
         <a class="item" v-for="page in pages" :href="page.url">{{page.name}}</a>
         <a class="right aligned item" href="/logout">

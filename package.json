@@ -38,6 +38,7 @@
     "fetch": "^1.1.0",
     "file-loader": "^0.9.0",
     "gulp-express": "^0.3.5",
+    "gulp-git": "^1.12.0",
     "node-sass": "^4.3.0",
     "sass-loader": "^4.1.1",
     "serve-favicon": "^2.3.2",

@@ -4,8 +4,12 @@ import Home from './pages/home.vue';
 import order from './pages/order.vue';
 import NotFound from './pages/notFound.vue';
 import { Router } from 'director';
-import { Button, Select } from 'element-ui';
+import { Button, Table, Pagination, Form, NavMenu } from 'element-ui';
 Vue.use(Button);
+Vue.use(Table);
+Vue.use(Pagination);
+Vue.use(Form);
+Vue.use(NavMenu);
 
 var app = new Vue({
     el: '#app',
@@ -14,11 +18,15 @@ var app = new Vue({
         return {
             currentView: Home,
             pages: [{
-                name: '主页',
+                name: 'home',
                 icon: 'home',
                 url: '#/redirect/home'
             }, {
-                name: '订单管理',
+                name: 'login',
+                icon: 'home',
+                url: '#/redirect/home'
+            }, {
+                name: 'order',
                 icon: 'block layout',
                 url: '#/redirect/order'
             }]

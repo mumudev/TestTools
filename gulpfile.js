@@ -16,11 +16,6 @@ gulp.task("webpack", function (callback) {
 });
 
 gulp.task('server', ['webpack'], function () {
-    setInterval(function () {
-        git.pull('origin', 'master', { args: '--rebase' }, function (err) {
-            if (err) throw err;
-        });
-    }, 60000);
     express.run(['index']); //Start server
     gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html'], ['webpack']); //Webpack 
     gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html', 'views/**/*.jade'], express.notify); //Watch views and app sources file.
@@ -30,14 +25,9 @@ gulp.task('server', ['webpack'], function () {
 gulp.task('watchGit', ['server'], function () {
     setInterval(function () {
         git.pull('origin', 'master', { args: '--rebase' }, function (err) {
-            if (err) throw err;
+            if (err) console.error(err);
         });
     }, 60000);
-});
-gulp.task('git', function () {
-    git.pull('origin', 'master', { args: '--rebase' }, function (err) {
-        if (err) throw err;
-    });
 });
 
 gulp.task('default', ['server']);

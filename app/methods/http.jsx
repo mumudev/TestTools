@@ -1,6 +1,15 @@
 /*jshint esversion: 6 */
 import _ from 'lodash';
 
+export function login(data) {
+    return _send('POST', {
+        url: '/v1/api/session',
+        data
+    });
+}
+export function getOrder() {
+    return;
+}
 function _send(type, options) {
     if (typeof options === 'string') {
         options = { url: options };
@@ -31,23 +40,6 @@ function _send(type, options) {
         console.log(err);
     });
 }
-
-export function Get(option) {
-    return _send('GET', option);
-}
-export function Post(option) {
-    return _send('POST', option);
-}
-export function Patch(option) {
-    return _send('PATCH', option);
-}
-export function Delete(option) {
-    return _send('DELETE', option);
-}
-
 export default {
-    Get,
-    Post,
-    Patch,
-    Delete
+    login
 };

@@ -1,27 +1,27 @@
-var favicon = require('serve-favicon');
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var express = require('express');
 var ejs = require('ejs');
 var path = require('path');
-var app = express();
 var conf = require('./conf');
-viewsPath = path.join(__dirname, 'views');
+var express = require('express');
+var favicon = require('serve-favicon');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+
 publicPath = path.join(__dirname, 'pub');
+viewsPath = path.join(__dirname, 'views');
 faviconPath = path.join(__dirname, '/pub/favicon.ico');
 
+var app = express();
+app.use(bodyParser.json());
 app.set('views', viewsPath);
 app.use(favicon(faviconPath));
-app.use(express.static(publicPath));
 app.use(session(conf.session));
-app.use(bodyParser.json());
+app.use(express.static(publicPath));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
 
 app.use('/' + conf.version + '/api', require('./api'));
-
 app.get('/', function (req, res) {
     res.render('index');
 });

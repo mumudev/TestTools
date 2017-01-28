@@ -1,24 +1,26 @@
 /*jshint esversion: 6 */
 import Vue from 'vue';
-import Home from './pages/home.vue';
+import home from './pages/home.vue';
 import order from './pages/order.vue';
 import login from './pages/login.vue';
-import NotFound from './pages/notFound.vue';
+import error from './pages/error.vue';
 import { Router } from 'director';
-import { Button, Table, Pagination, Form, Submenu } from 'element-ui';
+import { Button, Table, Pagination, Input, Form, FormItem, Submenu } from 'element-ui';
 
 Vue.use(Form);
+Vue.use(Input);
 Vue.use(Table);
 Vue.use(Button);
 Vue.use(Submenu);
+Vue.use(FormItem);
 Vue.use(Pagination);
 
 var app = new Vue({
     el: '#app',
-    template: '',
+    template: '<component v-bind:is="currentView" :pages="pages"></component>',
     data: function () {
         return {
-            currentView: Home,
+            currentView: home,
             pages: [{
                 name: 'home',
                 icon: 'home',
@@ -33,30 +35,30 @@ var app = new Vue({
 });
 
 var router = Router({
-    '/login': function () {
+    '/login'() {
         app.currentView = login;
     },
-    '/home': function () {
-        app.currentView = Home;
+    '/home'() {
+        app.currentView = home;
     },
-    '/order': function () {
+    '/order'() {
         app.currentView = order;
     },
-    '/redirect/?([^\/]*)\/([^\/]*)/?': function (url1, url2) {
+    '/redirect/?([^\/]*)\/([^\/]*)/?'(url1, url2) {
         var url = url2 ? url1 + '/' + url2 : url1;
-        app.currentView = Home;
+        app.currentView = home;
         router.setRoute(url);
-    }, 
+    },
     '/error': {
-        '/notfound': function () {
-            app.currentView = NotFound;
+        '/notfound'() {
+            app.currentView = error;
         }
     }
 });
 
 //页面未找到
 router.configure({
-    notfound: function () {
+    notfound() {
         router.setRoute('/error/notfound');
     }
 });

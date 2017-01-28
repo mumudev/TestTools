@@ -19,15 +19,19 @@ gulp.task('server', ['webpack'], function () {
     express.run(['index']); //Start server
     gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html'], ['webpack']); //Webpack 
     gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html', 'views/**/*.jade'], express.notify); //Watch views and app sources file.
-    gulp.watch(['index.js', 'api/**/*.js'], express.run); //Rstart server
+    gulp.watch(['./index.js', 'api/**/*.js'], express.run); //Rstart server
 });
 
-gulp.task('watchGit', ['server'], function () {
+gulp.task('watchGit', ['build'], function () {
     setInterval(function () {
         git.pull('origin', 'master', { args: '--rebase' }, function (err) {
             if (err) console.error(err);
         });
     }, 60000);
+    express.run(['index']); //Start server
+    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html'], ['build']); //Webpack 
+    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html', 'views/**/*.jade'], express.notify); //Watch views and app sources file.
+    gulp.watch(['./index.js', 'api/**/*.js'], express.run); //Rstart server
 });
 
 gulp.task('default', ['server']);

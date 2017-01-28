@@ -34,6 +34,11 @@ gulp.task('watchGit', ['server'], function () {
         });
     }, 60000);
 });
+gulp.task('git', function () {
+    git.pull('origin', 'master', { args: '--rebase' }, function (err) {
+        if (err) throw err;
+    });
+});
 
 gulp.task('default', ['server']);
 

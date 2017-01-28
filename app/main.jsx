@@ -2,6 +2,7 @@
 import Vue from 'vue';
 import Home from './pages/home.vue';
 import order from './pages/order.vue';
+import login from './pages/login.vue';
 import NotFound from './pages/notFound.vue';
 import { Router } from 'director';
 import { Button, Table, Pagination, Form, NavMenu } from 'element-ui';
@@ -22,10 +23,6 @@ var app = new Vue({
                 icon: 'home',
                 url: '#/redirect/home'
             }, {
-                name: 'login',
-                icon: 'home',
-                url: '#/redirect/home'
-            }, {
                 name: 'order',
                 icon: 'block layout',
                 url: '#/redirect/order'
@@ -37,6 +34,9 @@ var app = new Vue({
 var router = Router({
     '/home': function () {
         app.currentView = Home;
+    },
+    '/login': function () {
+        app.currentView = login;
     },
     '/order': function () {
         app.currentView = order;

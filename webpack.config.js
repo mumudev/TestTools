@@ -5,7 +5,7 @@ module.exports = {
     // Entry Files
     entry: {
         main: './app/main.jsx',
-        vendor: ['vue', 'lodash', 'director', 'whatwg-fetch']
+        vendor: ['vue', 'lodash', 'vuex', 'vue-router', 'vue-resource', 'director', 'whatwg-fetch']
     },
     // Output Files
     output: {
@@ -15,6 +15,9 @@ module.exports = {
     // Loaders
     module: {
         loaders: [{
+            test: /\.vue$/,
+            loader: 'vue'
+        }, {
             test: /\.jsx$/,
             loader: 'babel'
         }, {
@@ -25,28 +28,16 @@ module.exports = {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
         }, {
-            test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-            loader: 'file-loader'
-        }, {
-            test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
-            loader: 'file-loader',
-            query: {
-                name: '[name].[ext]?[hash]'
-            }
-        }, {
-            test: /\.vue$/,
-            loader: 'vue'
+            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+            loader: 'url-loader?limit=50000&name=[path][name].[ext]'
         }]
     },
     babel: {
         presets: ['es2015', 'stage-0'],
         plugins: ['transform-runtime']
     },
-    // 其他解决方案
     resolve: {
-        // require时省略的扩展名，遇到.vue结尾的也要去加载
         extensions: ['', '.js', '.jsx', '.vue'],
-        root: '../node_modules',
         alias: {
             'vue': 'vue/dist/vue.js'
         },
@@ -55,6 +46,7 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest'],
+            minChunks: Infinity
         }),
         new webpack.ProvidePlugin({
             Vue: 'vue'

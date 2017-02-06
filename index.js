@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
 
+app.get('/login', function (req, res) {
+    res.render('login');
+});
 app.use('/' + conf.version + '/api', require('./api'));
 app.get('/', function (req, res) {
     res.render('index');

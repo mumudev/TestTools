@@ -1,5 +1,6 @@
-module.exports = function(req, res, next) {
-    res.msg = function(code, msg, data) {
+/*jshint esversion: 6 */
+module.exports = function (req, res, next) {
+    res.msg = function (code, msg, data) {
         var msg = {
             code,
             msg

@@ -37,6 +37,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "fetch": "^1.1.0",
     "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
     "gulp-express": "^0.3.5",
     "gulp-git": "^1.12.0",
     "node-sass": "^4.3.0",

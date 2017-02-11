@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
     // Entry Files
     entry: {
-        main: './app/main.jsx',
+        app: './app/app.jsx',
         vendor: ['vue', 'lodash', 'vuex', 'vue-router', 'vue-resource', 'director', 'whatwg-fetch']
     },
     // Output Files
@@ -20,6 +20,9 @@ module.exports = {
         }, {
             test: /\.jsx$/,
             loader: 'babel'
+        }, {
+            test: /\.html$/,
+            loader: 'html'
         }, {
             test: /\.js$/,
             loader: 'babel-loader',

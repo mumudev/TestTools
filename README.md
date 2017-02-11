@@ -23,13 +23,13 @@
 
   
 ```js
-      module.exports = {
-        auth: false,
-        cookieSecret: 'nemv',
-        database: 'nemv',
-        host: 'localhost',
-        port: 27017
-    };
+module.exports = {
+    auth: false,
+    cookieSecret: 'nemv',
+    database: 'nemv',
+    host: 'localhost', 
+    port: 27017
+};
 ```
 
   You can build as below:

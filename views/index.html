@@ -12,12 +12,49 @@
 
 <body>
     <div id="app">
+        <el-menu router='true' theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+            <el-menu-item index="home">Home</el-menu-item>
+            <el-menu-item index="order">Order</el-menu-item>
+        </el-menu>
+        <div class="line"></div>
+        </el-menu>
+        <el-row class="content">
+            <el-col :span="24">
+            </el-col>
+        </el-row>
     </div>
 </body>
 
 <!--Build Script-->
 <script type="text/javascript" src="/dist/manifest.js"></script>
 <script type="text/javascript" src="/dist/vendor.js"></script>
-<script type="text/javascript" src="/dist/main.js"></script>
+<script type="text/javascript" src="/dist/app.js"></script>
 
 </html>
+<style>
+    body {
+        margin: 0;
+    }
+    
+    .el-menu-vertical {
+        position: absolute;
+        left: 0;
+        top: 57px;
+        width: 205px;
+        background-color: lightskyblue;
+        border-left-width: 0;
+        height: 700px;
+    }
+    
+    .content {
+        margin-left: 210px;
+        top: 57px;
+    }
+    
+    .sidebar {
+        left: 0;
+        top: 0;
+        height: 57px;
+        background-color: lightskyblue;
+    }
+</style>

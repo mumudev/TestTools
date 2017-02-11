@@ -17,7 +17,7 @@ gulp.task("webpack", function (callback) {
 
 gulp.task('server', ['webpack'], function () {
     express.run(['index']); //Start server
-    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html'], ['webpack']); //Webpack 
+    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html', './views'], ['webpack']); //Webpack 
     gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html', 'views/**/*.jade'], express.notify); //Watch views and app sources file.
     gulp.watch(['./index.js', 'api/**/*.js'], express.run); //Rstart server
 });

@@ -1,3 +1,4 @@
 node_modules
 pub/dist
 .vscode
+conf

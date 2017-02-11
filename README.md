@@ -4,6 +4,8 @@
 
   A simple open source and full-stack framework which used nodejs+express+mongoose+Vue called NEMV.
 
+  [Demo Site](http://www.nemv.club/)
+
 ## Depandence
 
   Nodejs>=4

@@ -20,7 +20,9 @@
 
   At first, you need to create a file named: mongodb.js in conf folder.
   Write down the code bellow in mongodb.js:
-  `
+
+  
+```js
       module.exports = {
         auth: false,
         cookieSecret: 'nemv',
@@ -28,7 +30,7 @@
         host: 'localhost',
         port: 27017
     };
-  `
+```
 
   You can build as below:
 

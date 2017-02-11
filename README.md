@@ -18,6 +18,18 @@
 
   The quickest way to get started Is shown below:
 
+  At first, you need to create a file named: mongodb.js in conf folder.
+  Write down the code bellow in mongodb.js:
+  `
+      module.exports = {
+        auth: false,
+        cookieSecret: 'nemv',
+        database: 'nemv',
+        host: 'localhost',
+        port: 27017
+    };
+  `
+
   You can build as below:
 
 ```bash

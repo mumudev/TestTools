@@ -7,6 +7,7 @@ import VueResource from 'vue-resource';
 import routeConfig from './router';
 import store from './store';
 import ElementUI from 'element-ui';
+import './style/app.css'; 
 
 Vue.use(VueRouter);
 Vue.use(VueResource);

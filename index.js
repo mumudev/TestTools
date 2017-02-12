@@ -27,12 +27,16 @@ app.get('/login', function (req, res) {
 app.use('/' + conf.version + '/api', require('./api'));
 
 app.get('/', function (req, res) {
-    if(!req.session.user){
+    if (!req.session.user) {
         return res.redirect('/login');
     }
     res.render('index');
 });
 
+app.get('/logout', function (req, res) {
+    req.session.user = null;
+    return res.redirect('/login');
+});
 // production error handler
 app.use(function (err, req, res, next) {
     console.error(err.stack);

@@ -1,7 +1,16 @@
 /*jshint esversion: 6 */
 import Vue from 'vue';
-import { Form, Input, Button, FormItem } from 'element-ui';
+import { Form, Input, Button, FormItem, Row, Col } from 'element-ui';
 import request from './methods/request';
+import './style/row.css';
+import './style/col.css';
+import './style/button.css';
+import './style/form-item.css';
+import './style/form.css';
+import './style/input.css';
+import './style/login.css';
+Vue.use(Row);
+Vue.use(Col);
 Vue.use(Form);
 Vue.use(Input);
 Vue.use(Button);

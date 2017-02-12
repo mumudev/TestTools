@@ -1,0 +1,23 @@
+.login{
+    background: #eef1f6;
+    padding: 12px;
+    min-width: 400px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.2),   inset 0 0 1px 0 rgba(255,255,255,1);
+    margin:  20px auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #474b50;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+body{
+    height: 1080px;
+    background: -webkit-linear-gradient(#515759, #d1d4db); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#515759, #d1d4db); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#515759, #d1d4db); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#515759, #d1d4db); /* 标准的语法（必须放在最后） */
+}
+
+.submit-btn{
+    float: right;
+}

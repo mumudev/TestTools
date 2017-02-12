@@ -20,8 +20,8 @@ gulp.task('frontend', ['webpack'], function () {
 });
 
 gulp.task('server', ['webpack'], function () {
-    express.run(['index'],{},35729); //Start server
-    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html', './views/*.html'], ['webpack']); //Webpack 
+    express.run(['index'], {}, 35729); //Start server
+    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.css', './app/**/*.jsx', './app/**/*.html', './views/*.html'], ['webpack']); //Webpack 
     gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html', 'views/**/*.jade'], express.notify); //Watch views and app sources file.
     gulp.watch(['./index.js', 'api/**/*.js'], express.run); //Rstart server
 });

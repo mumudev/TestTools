@@ -25,7 +25,11 @@ app.get('/login', function (req, res) {
     res.render('login');
 });
 app.use('/' + conf.version + '/api', require('./api'));
+
 app.get('/', function (req, res) {
+    if(!req.session.user){
+        return res.redirect('/login');
+    }
     res.render('index');
 });
 

@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import Vuex from 'vuex';
-import Vue from 'vue';
+var Vue = require('vue');
 import state from './state';
 import actions from './actions';
 import mutations from './mutations';

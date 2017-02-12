@@ -1,8 +1,11 @@
 /*jshint esversion: 6 */
 import Vue from 'vue';
-import ElementUI from 'element-ui';
+import { Form, Input, Button, FormItem } from 'element-ui';
 import request from './methods/request';
-Vue.use(ElementUI);
+Vue.use(Form);
+Vue.use(Input);
+Vue.use(Button);
+Vue.use(FormItem);
 
 var app = new Vue({
     el: '#login',

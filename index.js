@@ -17,7 +17,7 @@ app.use(favicon(faviconPath));
 app.use(session(conf.session));
 app.use(express.static(publicPath));
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(require('connect-livereload')());
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
 

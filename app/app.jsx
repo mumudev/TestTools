@@ -8,7 +8,6 @@ import routeConfig from './router';
 import store from './store';
 import ElementUI from 'element-ui';
 
-
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(ElementUI);

@@ -12,16 +12,11 @@
 
 <body>
     <div id="app">
-        <el-menu router='true' theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu router="router" theme="dark" default-active="1" class="el-menu-demo" mode="horizontal">
             <el-menu-item index="home">Home</el-menu-item>
             <el-menu-item index="order">Order</el-menu-item>
         </el-menu>
-        <div class="line"></div>
-        </el-menu>
-        <el-row class="content">
-            <el-col :span="24">
-            </el-col>
-        </el-row>
+        <router-view></router-view>
     </div>
 </body>
 

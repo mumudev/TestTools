@@ -5,6 +5,7 @@ module.exports = {
     // Entry Files
     entry: {
         app: './app/app.jsx',
+        login: './app/login.jsx',
         vendor: ['vue', 'lodash', 'vuex', 'vue-router', 'vue-resource', 'director', 'whatwg-fetch']
     },
     // Output Files

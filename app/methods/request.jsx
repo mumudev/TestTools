@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import _ from 'lodash';
-
+var cookie = '';
 export function login(data) {
     return _send('POST', {
         url: '/v1/api/session',
@@ -18,13 +18,14 @@ function _send(type, options) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        }
+        },
+        credentials: 'include'
     };
     var newOptions = _.extend({}, defaultOptions);
     newOptions.method = type;
     newOptions.url = options.url;
     if (options.data) {
-        newOptions.body = options.data;
+        newOptions.body = JSON.stringify(options.data);
     }
     return fetch(newOptions.url, newOptions).then(function (res) {
         if (res.status !== 200) {

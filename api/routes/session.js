@@ -4,17 +4,17 @@ var Model = require('../models/User');
 var router = express.Router();
 
 router.route('/:id?')
-    .post(function(req, res) {
+    .post(function (req, res) {
         var username = req.body.username;
         var password = req.body.password;
-        var callback = function(err, obj) {
+        var callback = function (err, obj) {
             if (err) {
                 return res.msg(0, 'Something error!');
             }
             if (!obj) {
                 return res.msg(0, 'Login fail!');
             }
-            res.session.user = obj;
+            req.session.user = obj;
             return res.msg(1, 'Login success!');
         };
         Model.findOne({
@@ -22,7 +22,8 @@ router.route('/:id?')
             password
         }).exec(callback);
     })
-    .delete(function(req, res) {
-        res.session.user = null;
+    .delete(function (req, res) {
+        req.session.user = null;
+        return res.msg(1, 'logout success!');
     });
 module.exports = router;

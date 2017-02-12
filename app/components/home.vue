@@ -1,18 +1,17 @@
 <template>
-    <div class="order">
-        <WTable></WTable>
+    <div class="home">
+        aaa
     </div>
 </template>
 
 <script>
-    import WTable from '../widgets/Table';
     export default {
         data() {
             return {
             }
         },
         components: {
-            WTable
         }
     }
+
 </script>

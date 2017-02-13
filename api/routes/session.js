@@ -1,13 +1,30 @@
 /*jshint esversion: 6 */
 var express = require('express');
 var Model = require('../models/User');
+var wxApi = require('../util/wxApi');
 var router = express.Router();
-
 router.route('/:id?')
-    .post(function (req, res) {
+    .get(function(req, res) {
+        var code = req.query.code;
+        wxApi.getUserInfoByCode(code).then(function(result) {
+            var openid = result.openid;
+            var wx_info = result;
+            var callback = function(err, obj) {
+                if (err) {
+                    return res.redirect('/login');
+                }
+                req.session.user = obj;
+                return res.redirect('/');
+            };
+            Model.findOneAndUpdate({ openid }, { wx_info }, { upsert: true }, callback);
+        }).catch(function(err) {
+            console.log(err);
+        });
+    })
+    .post(function(req, res) {
         var username = req.body.username;
         var password = req.body.password;
-        var callback = function (err, obj) {
+        var callback = function(err, obj) {
             if (err) {
                 return res.msg(0, 'Something error!');
             }
@@ -22,7 +39,7 @@ router.route('/:id?')
             password
         }).exec(callback);
     })
-    .delete(function (req, res) {
+    .delete(function(req, res) {
         req.session.user = null;
         return res.msg(1, 'logout success!');
     });

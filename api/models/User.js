@@ -6,7 +6,6 @@ var rightSchema = mongoose.Schema({
 
 var wxSchema = mongoose.Schema({ //微信wiki：https://mp.weixin.qq.com/wiki
     subscribe: Number, //是否关注
-    openid: String, //用户openid
     nickname: String, //用户昵称
     password: String, //用户密码
     sex: Number, //性别
@@ -22,6 +21,7 @@ var wxSchema = mongoose.Schema({ //微信wiki：https://mp.weixin.qq.com/wiki
 });
 
 var schema = mongoose.Schema({
+    openid: String, //用户openid
     username: { type: String, unique: true },
     api_key: { type: String, unique: true },
     right: rightSchema,

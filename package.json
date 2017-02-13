@@ -63,6 +63,8 @@
     "mongoose": "^4.7.8",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.2.0",
+    "wechat": "^2.0.3",
+    "wechat-pay": "^0.2.4",
     "whatwg-fetch": "^2.0.2"
   }
 }

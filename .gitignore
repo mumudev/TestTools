@@ -4,3 +4,4 @@ pub/dist
 conf
 *.out
 *.log
+conf/*.js

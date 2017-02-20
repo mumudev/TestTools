@@ -27,9 +27,9 @@ app.get('/login', function (req, res) {
 app.use('/' + conf.version + '/api', require('./api'));
 
 app.get('/', function (req, res) {
-    if (!req.session.user) {
-        return res.redirect('/login');
-    }
+    // if (!req.session.user) {
+    //     return res.redirect('/login');
+    // }
     res.render('index');
 });
 

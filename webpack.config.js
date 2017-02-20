@@ -10,7 +10,7 @@ module.exports = {
     },
     // Output Files
     output: {
-        path: 'pub/dist',
+        path: './pub/dist/',
         filename: '[name].js'
     },
     // Loaders

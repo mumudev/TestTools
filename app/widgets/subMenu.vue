@@ -1,5 +1,5 @@
 <template>
-    <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" :router="true">
+    <el-menu class="tac" theme="dark" default-active="/elindex/hot" class="el-menu-vertical-demo" mode="horizontal" :router="true">
         <el-menu-item index="/elindex/hot">处理中心</el-menu-item>
         <el-submenu index="2">
             <template slot="title">我的工作台</template>

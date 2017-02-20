@@ -1,19 +1,22 @@
 <template>
     <div class="home">
         <el-row>
-            <el-col :span="3" v-for="(o, index) in 4" :offset="index > 0 ? 1 : 0">
-
-                <el-card :body-style="{ padding: '0px' }">
-                    <img class="image">
-                    <div style="padding: 14px;">
-                        <span>好吃的汉堡</span>
-                        <div class="bottom clearfix">
-                            <time class="time">{{ currentDate }}</time>
-                            <el-button type="text" class="button">操作按钮</el-button>
-                        </div>
-                    </div>
+            <el-col   :span="24">
+            <div class="head">Today Status</div>
+            </el-col>
+        </el-row>
+        <el-row type="flex" class="cards" justify="center">
+            <el-col  class="card"  :span="6" v-for="item in labels">
+                <el-card:class="item.class"  url="#">
+                    <div class="card-label">{{item.name}}</div>
+                    <hr>
+                    <div class="card-label">{{item.data}}</div>
                 </el-card>
-
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="24">
+            <hr>
             </el-col>
         </el-row>
     </div>
@@ -23,10 +26,61 @@
     export default {
         data() {
             return {
+                labels: [{
+                    name: 'Unhandle',
+                    data: '46',
+                    url: '',
+                    class: 'unhandle-ticket'
+                }, {
+                    name: 'Handling',
+                    data: '46',
+                    url: '',
+                    class: 'handling-ticket'
+                }, {
+                    name: 'All',
+                    data: '46',
+                    url: '',
+                    class: 'all-ticket'
+                }, {
+                    name: 'Failed',
+                    data: '46',
+                    url: '',
+                    class: 'failed-ticket'
+                }]
             }
         },
-        components: {
-        }
+        components: {}
     }
-
 </script>
+<style scoped>
+    .card {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .cards {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .head {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    .unhandle-ticket {
+        background-color: #41dcdc;
+    }
+    
+    .handling-ticket {
+        background-color: #48ff56;
+    }
+    
+    .all-ticket {
+        background-color: #2c60f0
+    }
+    
+    .failed-ticket {
+        background-color: #e40000;
+    }
+</style>

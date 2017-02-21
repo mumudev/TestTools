@@ -7,7 +7,7 @@
         </el-row>
         <el-row type="flex" class="cards" justify="center">
             <el-col  class="card"  :span="6" v-for="item in labels">
-                <el-card:class="item.class"  url="#">
+                <el-card :class="item.class"  url="#">
                     <div class="card-label">{{item.name}}</div>
                     <hr>
                     <div class="card-label">{{item.data}}</div>

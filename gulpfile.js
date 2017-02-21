@@ -53,7 +53,7 @@ gulp.task('git', ['build'], function() {
             if (err) console.error(err);
         });
     }, 60000);
-    express.run(['index']);
+    gulp.run(['index'], {}, 35729);
     gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html'], ['build']);
     gulp.watch(['./index.js', 'api/**/*.js'], express.run);
 });

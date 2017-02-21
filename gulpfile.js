@@ -1,9 +1,8 @@
-var webpackConfig = require('./webpack.config.js');
 var gulp = require('gulp');
+var git = require('gulp-git');
 var webpack = require("webpack");
 var express = require('gulp-express');
-var git = require('gulp-git');
-var a = false;
+var webpackConfig = require('./webpack.config.js');
 gulp.task("webpack", function(callback) {
     var myConfig = Object.create(webpackConfig);
     myConfig.devtool = 'source-map';
@@ -21,21 +20,9 @@ gulp.task("notify", ['webpack'], function(callback) {
 });
 
 gulp.task('default', ['webpack'], function(callback) {
-    a = true;
-    express.run(['index'], {}, 35729); //Start server
-    gulp.watch(['./app/**/*.*', './index.js', 'api/**/*.js', './views/*.html'], ['notify']); //Webpack 
-    gulp.watch(['./index.js', 'api/**/*.js'], express.run); //Restart server
-});
-
-gulp.task('git', ['build'], function() {
-    setInterval(function() {
-        git.pull('origin', 'master', { args: '--rebase' }, function(err) {
-            if (err) console.error(err);
-        });
-    }, 60000);
-    express.run(['index']); //Start server
-    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html'], ['build']); //Webpack 
-    gulp.watch(['./index.js', 'api/**/*.js'], express.run); //Rstart server
+    express.run(['index'], {}, 35729);
+    gulp.watch(['./app/**/*.*', './index.js', 'api/**/*.js', './views/*.html'], ['notify']);
+    gulp.watch(['./index.js', 'api/**/*.js'], express.run);
 });
 
 gulp.task('build', function(callback) {
@@ -58,4 +45,15 @@ gulp.task('build', function(callback) {
         }
         callback();
     });
+});
+
+gulp.task('git', ['build'], function() {
+    setInterval(function() {
+        git.pull('origin', 'master', { args: '--rebase' }, function(err) {
+            if (err) console.error(err);
+        });
+    }, 60000);
+    express.run(['index']);
+    gulp.watch(['./app/**/*.vue', './app/**/*.js', './app/**/*.jsx', './app/**/*.html'], ['build']);
+    gulp.watch(['./index.js', 'api/**/*.js'], express.run);
 });

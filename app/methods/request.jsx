@@ -1,18 +1,47 @@
 /*jshint esversion: 6 */
 import _ from 'lodash';
 var cookie = '';
-export function login(data) {
-    return _send('POST', {
-        url: '/v1/api/session',
-        data
-    });
-}
-export function getOrder() {
-    return;
-}
+var version = '/v1/api/';
+
+export default {
+    login(data) {
+        return _send('POST', {
+            url: 'session',
+            data
+        });
+    },
+    user: {
+        get(id) {
+            id = id ? id : '';
+            return _send('GET', {
+                url: 'user/' + id
+            });
+        },
+        update(id, data) {
+            data = data ? data : id;
+            return _send('PATCH', {
+                url: 'user/' + id,
+                data
+            });
+        },
+        create(data) {
+            data = data;
+            return _send('POST', {
+                url: 'user',
+                data
+            });
+        },
+        delete(id) {
+            return _send('DELETE', {
+                url: 'user/' + id
+            });
+        }
+
+    }
+};
 function _send(type, options) {
     if (typeof options === 'string') {
-        options = { url: options };
+        options = { url: version + options };
     }
     var defaultOptions = {
         headers: {
@@ -23,7 +52,7 @@ function _send(type, options) {
     };
     var newOptions = _.extend({}, defaultOptions);
     newOptions.method = type;
-    newOptions.url = options.url;
+    newOptions.url = version + options.url;
     if (options.data) {
         newOptions.body = JSON.stringify(options.data);
     }
@@ -41,6 +70,3 @@ function _send(type, options) {
         console.log(err);
     });
 }
-export default {
-    login
-};

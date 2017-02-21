@@ -3,10 +3,14 @@ var Model = require('../models/User');
 var mathUtil = require('../util/math');
 var router = express.Router();
 
-router.route('/:id?')
-    .get(function (req, res) {
-        var id = req.params.id;
-        var callback = function (err, obj) {
+router.route('/:_id?')
+    .get(function(req, res) {
+        var queryJson = {};
+        var _id = req.params._id;
+        if (_id) {
+            queryJson._id = _id;
+        }
+        var callback = function(err, obj) {
             if (err) {
                 return res.msg(0, 'Id is not available!');
             }
@@ -17,11 +21,11 @@ router.route('/:id?')
 
             return res.msg(1, 'Get data success!', obj);
         };
-        Model.findById(id).exec(callback);
+        Model.find(queryJson).exec(callback);
     })
-    .post(function (req, res) {
+    .post(function(req, res) {
         var body = req.body;
-        var callback = function (err, obj) {
+        var callback = function(err, obj) {
             if (err) {
                 return res.msg(0, 'Something error! Please check your params');
             }
@@ -30,14 +34,14 @@ router.route('/:id?')
         body.api_key = mathUtil.randomStr(32);
         Model.create(body, callback);
     })
-    .patch(function (req, res) {
+    .patch(function(req, res) {
         var id = req.params.id;
         var query = req.query;
         var body = { $set: req.body };
         var options = {
             new: true
         };
-        var callback = function (err, obj) {
+        var callback = function(err, obj) {
             if (err) {
                 return res.msg(0, 'Something error! Please check your params');
             }
@@ -49,10 +53,10 @@ router.route('/:id?')
             Model.update(query, body, options, callback);
         }
     })
-    .delete(function (req, res) {
+    .delete(function(req, res) {
         var id = req.params.id;
         var query = req.query;
-        var callback = function (err, obj) {
+        var callback = function(err, obj) {
             if (err) {
                 return res.msg(0, 'Something error! Please check your params');
             }

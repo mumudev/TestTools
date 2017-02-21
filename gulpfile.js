@@ -14,14 +14,15 @@ gulp.task("webpack", function(callback) {
     });
 });
 
-gulp.task("notify", ['webpack'], function(callback) {
+gulp.task("notify", function(callback) {
     express.notify({ path: './app/**/*.*' });
     callback();
 });
 
 gulp.task('default', ['webpack'], function(callback) {
     express.run(['index'], {}, 35729);
-    gulp.watch(['./app/**/*.*', './index.js', 'api/**/*.js', './views/*.html'], ['notify']);
+    gulp.watch(['./app/**/*.*', './views/*.html'], ['webpack', 'notify']);
+    gulp.watch(['./index.js', 'api/**/*.js'], ['notify']);
     gulp.watch(['./index.js', 'api/**/*.js'], express.run);
 });
 

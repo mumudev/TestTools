@@ -4,14 +4,23 @@ var router = express.Router();
 
 router.route('/:id?')
     .get(function (req, res) {
-        var id = req.params.id;
-        var callback = function (err, obj) {
+        var queryJson = {};
+        var _id = req.params._id;
+        if (_id) {
+            queryJson._id = _id;
+        }
+        var callback = function(err, obj) {
             if (err) {
                 return res.msg(0, 'Id is not available!');
             }
+
+            if (!obj) {
+                return res.msg(0, 'Data is Empty!');
+            }
+
             return res.msg(1, 'Get data success!', obj);
         };
-        Model.findById(id).exec(callback);
+        Model.find(queryJson).exec(callback);
     })
     .post(function (req, res) {
         var body = req.body;

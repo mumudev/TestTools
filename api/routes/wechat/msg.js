@@ -1,5 +1,5 @@
 var wechat = require('wechat');
-var wxConf = require('../../../conf/wechat');
+var wxConf = require('../../../conf').wechat;
 var express = require('express');
 var router = express.Router();
 var config = {

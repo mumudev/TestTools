@@ -1,6 +1,6 @@
 var OAuth = require('wechat-oauth');
 var Token = require('../models/Token');
-var wxConf = require('../../conf/wechat');
+var wxConf = require('../../conf').wechat;
 var client = new OAuth(wxConf.appid, wxConf.appSecret, function(openid, callback) {
     // 传入一个根据openid获取对应的全局token的方法
     // 在getUser时会通过该方法来获取token

@@ -6,5 +6,8 @@ export default {
         msg: '',
         onSure: null,
         onClose: null
+    },
+    data:{
+
     }
 };

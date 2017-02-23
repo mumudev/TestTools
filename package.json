@@ -33,6 +33,7 @@
     "babel-runtime": "^6.22.0",
     "connect-livereload": "^0.6.0",
     "css-loader": "^0.26.1",
+    "d3": "^4.6.0",
     "director": "^1.2.8",
     "element-ui": "^1.1.6",
     "extract-text-webpack-plugin": "^1.0.1",

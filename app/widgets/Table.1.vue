@@ -12,7 +12,6 @@
 </template>
 
 <script>
-    import d3 from 'd3';
     export default {
         props: ['columns', 'rows', 'options'],
         data() {

@@ -3,7 +3,7 @@ var Model = require('../../models/User');
 var router = express.Router();
 var Payment = require('wechat-pay').Payment;
 var middleware = require('wechat-pay').middleware;
-var wxConf = require('../../../conf/wechat');
+var wxConf = require('../../../conf').wechat;
 
 var initConfig = {
     appId: wxConf.appId,

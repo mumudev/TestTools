@@ -19,11 +19,44 @@
             <hr>
             </el-col>
         </el-row>
+        <el-row>
+            <el-col :span="24">
+            <LineChart></LineChart>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
 <script>
+    import LineChart from '../widgets/LineChart';
     export default {
+        beforeCreate() {
+            console.log('beforeCreate');
+        },
+        created() {
+            console.log('created');
+        },
+        beforeMount() {
+            console.log('beforeMount');
+        },
+        mounted() {
+            console.log('mounted');
+        },
+        updated() {
+            console.log('updated');
+        },
+        activated() {
+            console.log('activated');
+        },
+        deactivated() {
+            console.log('deactivated');
+        },
+        beforeDestroy() {
+            console.log('beforeDestroy');
+        },
+        destroyed() {
+            console.log('destroyed');
+        },
         data() {
             return {
                 labels: [{
@@ -49,7 +82,9 @@
                 }]
             }
         },
-        components: {}
+        components: {
+            LineChart
+        }
     }
 </script>
 <style scoped>

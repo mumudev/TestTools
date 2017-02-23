@@ -61,22 +61,22 @@
             return {
                 labels: [{
                     name: 'Unhandle',
-                    data: '46',
+                    data: '31',
                     url: '',
                     class: 'unhandle-ticket'
                 }, {
                     name: 'Handling',
-                    data: '46',
+                    data: '35',
                     url: '',
                     class: 'handling-ticket'
                 }, {
                     name: 'All',
-                    data: '46',
+                    data: '67',
                     url: '',
                     class: 'all-ticket'
                 }, {
                     name: 'Failed',
-                    data: '46',
+                    data: '1',
                     url: '',
                     class: 'failed-ticket'
                 }]

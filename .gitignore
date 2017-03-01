@@ -5,3 +5,4 @@ conf
 *.out
 *.log
 conf/*.js
+pub/files

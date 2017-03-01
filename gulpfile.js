@@ -24,7 +24,13 @@ gulp.task("notify-webpack", ['webpack'], function(callback) {
     callback();
 });
 
-gulp.task('default', ['webpack'], function(callback) {
+gulp.task('default', ['watch:all'], function(callback) {});
+
+gulp.task('watch:app', ['webpack'], function(callback) {
+    gulp.watch(['./app/**/*.*', './views/*.html'], ['webpack']);
+});
+
+gulp.task('watch:all', ['webpack'], function(callback) {
     express.run(['index'], {}, 35729);
     gulp.watch(['./app/**/*.*', './views/*.html'], ['notify-webpack']);
     gulp.watch(['./index.js', 'api/**/*.js'], ['notify']);

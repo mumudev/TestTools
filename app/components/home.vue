@@ -1,13 +1,13 @@
 <template>
     <div class="home">
         <el-row>
-            <el-col   :span="24">
-            <div class="head">Today Status</div>
+            <el-col :span="24">
+                <div class="head">Today Status</div>
             </el-col>
         </el-row>
         <el-row type="flex" class="cards" justify="center">
-            <el-col  class="card"  :span="6" v-for="item in labels">
-                <el-card :class="item.class"  url="#">
+            <el-col class="card" :span="6" v-for="item in labels">
+                <el-card :class="item.class" url="#">
                     <div class="card-label">{{item.name}}</div>
                     <hr>
                     <div class="card-label">{{item.data}}</div>
@@ -16,12 +16,12 @@
         </el-row>
         <el-row>
             <el-col :span="24">
-            <hr>
+                <hr>
             </el-col>
         </el-row>
         <el-row>
             <el-col :span="24">
-            <LineChart></LineChart>
+                <LineChart></LineChart>
             </el-col>
         </el-row>
     </div>
@@ -86,6 +86,7 @@
             LineChart
         }
     }
+
 </script>
 <style scoped>
     .card {

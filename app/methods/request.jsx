@@ -10,6 +10,18 @@ export default {
             data
         });
     },
+    task: {
+        excelCompare(id) {
+            return _send('GET', {
+                url: 'task/excelCompare/' + id
+            });
+        },
+        reset(id) {
+            return _send('DELETE', {
+                url: 'task/excelCompare/' + id
+            });
+        }
+    },
     user: {
         get(id) {
             id = id ? id : '';

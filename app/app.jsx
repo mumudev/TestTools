@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 import Vue from 'vue';
-import order from './components/order.vue';
 import error from './components/error.vue';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
